@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/c5b7dc65da.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css" class="css">
+    <title>Openboard-Clone</title>
+</head>
+
+<body>
+
+    <div class="options-cont">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="tools-cont scale-tools">
+        <img class="pencil" src="./icons/pencil.png" alt="">
+        <img class="eraser" src="./icons/eraser.png" alt="">
+        <img class="download" src="./icons/download.jpg" alt="">
+        <img class="upload" src="./icons/upload.png" alt="">
+        <img class="sticky" src="./icons/stickynote.png" alt="">
+        <img class="redo" src="./icons/redo.jpg" alt="">
+        <img class="undo" src="./icons/undo.jpg" alt="">
+    </div>
+
+    <div class="pencil-tool-cont">
+
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="4" class="pencil-width">
+        </div>
+
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+
+    </div>
+
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="100" value="30" class="eraser-width">
+    </div>
+
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+        integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let socket = io.connect("http://localhost:5000");
+    </script>
+
+    <script src="./tools.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+
+</html>
