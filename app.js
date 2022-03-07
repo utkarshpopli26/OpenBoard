@@ -3,7 +3,7 @@ const socket = require("socket.io");
 
 const app = express();
 
-let port = 5000;
+let port = process.env.PORT || 5000;
 
 app.use(express.static("public"));
 
@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
         io.sockets.emit("drawStroke", data);
     })
 
-    socket.on("redoUndo" , (data) => {
-        io.sockets.emit("redoUndo" , data);
+    socket.on("redoUndo", (data) => {
+        io.sockets.emit("redoUndo", data);
     })
 });
